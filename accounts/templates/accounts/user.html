@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Agropro</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static  'accounts/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      
+      <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'accounts/css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'accounts/img/fevicon.png' %}" type="image/gif" />
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="{% static 'accounts/css/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href='accounts/https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
+      <link rel="stylesheet" href="{% static 'accounts/css/bootstrap-datepicker.min.css' %}">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js %}"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js %}"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'accounts/img/loading.gif' %}" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      <div class="full_bg">
+         <!-- header -->
+         <header class="header-area">
+            <div class="container-fluid">
+               <div class="row d_flex">
+                  <div class=" col-md-2 col-sm-3">
+                     <div class="logo">
+                        <a href="index.html">Agro<span>Pro</span></a>
+                     </div>
+                  </div>
+                  <div class="col-md-8 col-sm-9">
+                     <div class="navbar-area">
+                        <nav class="site-navbar">
+                           <ul> 
+                              <li><a class="active" href="index.html">Home</a></li>
+                              <li><a href="/accounts/search">Agri_Land_finder</a></li>
+                              <li><a href="/accounts/assist">Assistence</a></li>
+                               <li><a href="http://192.168.89.95:5000">Crop_Care</a></li>
+                                <!-- <li><a href="accounts/testimonail.html">Bidding</a></li> -->
+                              <!-- <li><a href="'accounts/blog.html">Seed_Bank</a></li> -->
+                              <li><a href="'accounts/contact.html">Contact</a></li>
+                              <a href="/accounts/login" class="nav-item nav-link">Logout</a>
+                              
+                           </ul>
+                           <button class="nav-toggler">
+                           <span></span>
+                           </button>
+                        </nav>
+                     </div>
+                  </div>
+                  <div class="col-md-2 padd_0 d_none">
+                     <ul class="email text_align_right">
+                        <!-- <li><a href="Javascript:void(0)">Login</a> -->
+                        </li>
+                        <li><a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <!-- end header inner -->
+         <!-- top -->
+         <div class="slider_main">
+            <!-- carousel code -->
+             <div id="banner1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000">
+                              <ol class="carousel-indicators">
+                                 <li data-target="#banner1" data-slide-to="0" class="active"></li>
+                                 <li data-target="#banner1" data-slide-to="1"></li>
+                                 <li data-target="#banner1" data-slide-to="2"></li>
+                              </ol>
+                              <div class="carousel-inner" role="listbox">
+                                 <div class="carousel-item active">
+                                    <picture>
+                                        <source srcset="{% static 'accounts/img/banner.jpg' %}" >
+                                     
+                                        <img srcset="{% static 'accounts/img/banner.jpg' %}" alt="responsive image" class="d-block img-fluid">
+                                    </picture>
+                                    <div class="carousel-caption relative">
+                                       
+                                    </div>
+                                 </div>
+                                 <!-- /.carousel-item -->
+                                 <div class="carousel-item">
+                                    <picture>
+                                     
+                                        <img srcset="{% static 'accounts/img/banner.jpg' %}" alt="responsive image" class="d-block img-fluid">
+                                    </picture>
+                                    <div class="carousel-caption relative">
+                                       
+                                    </div>
+                                 </div>
+                                 <!-- /.carousel-item -->
+                                 <div class="carousel-item">
+                                    <picture>
+                                        <source srcset="{% static 'accounts/img/banner.jpg' %}" >
+                                        <source srcset="{% static 'accounts/img/banner.jpg' %}" >
+                                       <source srcset="{% static 'accounts/img/banner.jpg' %}" >
+                                       <img srcset="{% static 'accounts/img/banner.jpg' %}" alt="responsive image" class="d-block img-fluid">
+                                    </picture>
+                                    <div class="carousel-caption relative">
+                                       
+                                    </div>
+                                 </div>
+                                 <!-- /.carousel-item -->
+                              </div>
+                              <!-- /.carousel-inner -->
+                              <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+                              <i class="fa fa-angle-left" aria-hidden="true"></i>
+                              <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+                              <i class="fa fa-angle-right" aria-hidden="true"></i>
+                              <span class="sr-only">Next</span>
+                              </a>
+                           </div>
+                           <div class="container-fluid">
+                              <div class="row">
+                                 <div class="col-md-12">
+                                    <div class="willom">
+                                      <h1> Agriculture Farm</h1>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+         </div>
+      </div>
+      <!-- end banner -->
+      <!-- about -->
+      <div class="about">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class="col-lg-6 col-md-12">
+                  <div class="titlepage text_align_left">
+                     <span>About Us</span>
+                     <h2>AGRICULTURE MARKET</h2>
+                     <p>fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that itfact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that itfact th</p>
+                     <a class="read_more" href="about.html">Learn More</a>
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <div class="row d_flex">
+                   <div class="col-md-7">
+                     <div class="about_img">
+                        <figure><img src="{% static 'accounts/img/about_img.jpg' %}" alt="#"/>
+                        </figure>
+                     </div>
+                   </div>
+                   <div class="col-md-5">
+                     <div class="about_img">
+                        <figure><img src="{% static 'accounts/img/about_img1.jpg' %}" alt="#"/>
+                        </figure>
+                     </div>
+                   </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end about -->
+      <!-- services -->
+      <div class="services">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_left">
+                     <span>What We Do</span>
+                         <h2>SERVICES WE OFFER</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="services_box_main">
+                     <div  class="services_box text_align_left">
+                          <figure><img src="{% static 'accounts/img/service1.jpg' %}" alt="#"/></figure>
+                        <div class="veget">
+                           <h3>Crop<br>Recommendation</h3>
+                           <p>Our advanced crop recommendation system utilizes artificial intelligence and machine learning algorithms to analyze various factors  soil type, climate conditions, historical .</p>
+                        </div>
+                     </div>
+                     <a class="read_more" href="services.html">Explore</a>
+                  </div>
+               </div>
+               <div class="col-md-4">
+               <div class="services_box_main">
+                     <div  class="services_box text_align_left">
+                          <figure><img src="{% static 'accounts/img/service2.jpg' %}" alt="#"/></figure>
+                        <div class="veget">
+                           <h3>Fertilizer<br>Recommendation</h3>
+                           <p>Fertilizer recommendations can vary significantly depending on factors such as the type of plants you're growing, soil conditions, climate, and specific nutrient deficiencies</p>
+                        </div>
+                     </div>
+                     <a class="read_more" href="services.html">Explore</a>
+                  </div>
+               </div>
+               <div class="col-md-4">
+               <div class="services_box_main">
+                     <div  class="services_box text_align_left">
+                          <figure><img src="{% static 'accounts/img/service3.jpg' %}" alt="#"/></figure>
+                        <div class="veget">
+                           <h3>yield<br>prediction</h3>
+                           <p>Different crops have varying needs for nutrients at different stages of growth. Here are some general fertilizer recommendations for common crops</p>
+                        </div>
+                     </div>
+                     <a class="read_more" href="services.html">Explore</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end services -->
+      <!-- customers -->
+
+      <!-- end customers -->
+
+      <!-- end contact -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                         <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3  text_align_left">
+                              <h3>Newsletter</h3>
+                              <form id="colof" class="form_subscri">
+                                 <input class="newsl" placeholder="Enter Email" type="text" name="Email">
+                                 <button class="subsci_btn"><img src="{% static 'accounts/img/new.png' %}" alt="#"/></button>
+                              </form>
+                              
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3 text_align_left">
+                              <h3> Explore</h3>
+                              <ul class="menu_footer">
+                                 <li><a href="index.html">Home</a></li>
+                                 <li><a href="about.html">About</a></li>
+                                 <li><a href="'accounts/service.html">Service</a></li>
+                                 <li><a href="'accounts/Javascript:void(0)">Projects</a></li>
+                                 <li><a href="'accounts/testimonail.html">Testimonail</a></li>
+                                 <li><a href="'accounts/contact.html">Contact us</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3 text_align_left">
+                              <h3>Recent Posts</h3>
+                              <ul class="recent">
+                                 <li><img src="{% static 'accounts/img/resent.jpg' %}" alt="#"/> </li>
+                                 <li><img src="{% static 'accounts/img/resent.jpg' %}" alt="#"/></li>
+                              </ul>
+                           </div>
+                        </div>
+                         <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3  flot_right text_align_left">
+                              <h3>ContacT</h3>
+                              <ul class="top_infomation">
+                                 <li><i class="fa fa-phone" aria-hidden="true"></i>
+                                    +01 9156796026
+                                 </li>
+                                 <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <a href="accounts/Javascript:void(0)">team_sinhgad@gmail.com</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+             
+            <div class="copyright">
+               <div class="container">
+                  <div class="row d_flex">
+                     <div class="col-md-8">
+                        <p>© 2024 All Rights Reserved  by <a href="https://html.design/"> team_sinhgad</a></p>
+                     </div>
+                     <div class="col-md-4">
+                           <ul class="social_icon ">
+                              <li><a href="accounts/Javascript:void(0)"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                              <li><a href="accounts/Javascript:void(0)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              <li><a href="accounts/Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                           </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{% static 'accounts/js/jquery.min.js' %}"></script>
+      <script src="{% static 'accounts/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'accounts/js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'accounts/js/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'accounts/js/bootstrap-datepicker.min.js' %}"></script>
+      <script src="{% static 'accounts/js/custom.js' %}"></script>
+   </body>
+</html>

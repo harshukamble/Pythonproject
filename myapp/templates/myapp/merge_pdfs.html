@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merge PDFs</title>
+</head>
+<body>
+    <h2>Merge PDF Files</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Merge PDFs</button>
+    </form>
+</body>
+</html>

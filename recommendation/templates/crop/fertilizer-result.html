@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .title {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .recommendation {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+</style>
+<div class="container">
+    <h2 class="title">{{ title }}</h2>
+    <div class="recommendation">
+        {{ recommendation | safe }}
+    </div>
+</div>
+{% endblock %}

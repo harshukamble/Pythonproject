@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>PDF TO IMAGE</title>
+    <style>
+            body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom right, #3498db, #2ecc71);
+    }
+    </style>
+</head>
+<body>
+    <div class="container" style="align-items: center;">
+        <div class="row justify-content-center pt-5">
+            <div class="col-md-7 py-2">
+                <div class="card">
+                    <div class="p-3 text-center">
+                        <h1>CONVERT TO IMAGE</h1>
+                    </div>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div  style="align-content: center; margin-left: 280px;">
+                            {{ form.as_p }}
+                        </div>
+                        <div class="m-2 py-3 text-center">
+                            <button type="submit" class="btn btn-primary">Convert</button>
+                        </div>
+                    </form>
+                    {% if pdf %}
+                    <div class="m-2 py-3 text-center">
+                        <a href="{{ pdf.url }}" download="converted.pdf" class="btn btn-success">Download PDF</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

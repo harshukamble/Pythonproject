@@ -1,0 +1,18 @@
+<!-- convert_ppt.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert PPT to PDF</title>
+</head>
+<body>
+    <h1>Convert PPT to PDF</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Convert">
+    </form>
+    {% if pdf_url %}
+        <a href="{{ pdf_url }}" download>Download PDF</a>
+    {% endif %}
+</body>
+</html>

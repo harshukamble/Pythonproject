@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2 style="text-align: center;">Get informed advice on fertilizer based on soil</h2>
+
+<form method="POST" style="max-width: 500px; margin: 50px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+    {% csrf_token %}
+    <label for="nitrogen" style="display: block; font-weight: bold;">Nitrogen:</label>
+    <input type="number" name="nitrogen" id="nitrogen" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;" required><br><br>
+    <label for="phosphorous" style="display: block; font-weight: bold;">Phosphorous:</label>
+    <input type="number" name="phosphorous" id="phosphorous" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;" required><br><br>
+
+    <label for="pottasium" style="display: block; font-weight: bold;">Pottasium:</label>
+    <input type="number" name="pottasium" id="pottasium"style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;" required><br><br>
+
+    <label for="cropname" style="display: block; font-weight: bold;">Crop you want to grow:</label>
+    <select name="cropname" id="cropname" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; height: 40px;">
+        <option value="rice">Rice</option>
+        <option value="maize">Maize</option>
+        <option value="chickpea">Chickpea</option>
+        <option value="kidneybeans">Kidney Beans</option>
+        <option value="pigeonpeas">Pigeon Peas</option>
+        <option value="mothbeans">Moth Beans</option>
+        <option value="mungbean">Mung Bean</option>
+        <option value="blackgram">Black Gram</option>
+        <option value="lentil">Lentil</option>
+        <option value="pomegranate">Pomegranate</option>
+        <option value="banana">Banana</option>
+        <option value="mango">Mango</option>
+        <option value="grapes">Grapes</option>
+        <option value="watermelon">Watermelon</option>
+        <option value="muskmelon">Muskmelon</option>
+        <option value="apple">Apple</option>
+        <option value="orange">Orange</option>
+        <option value="papaya">Papaya</option>
+        <option value="coconut">Coconut</option>
+        <option value="cotton">Cotton</option>
+        <option value="jute">Jute</option>
+        <option value="coffee">Coffee</option>
+    </select><br><br>
+    <button type="submit" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;">Predict</button>
+</form>
+
+{% endblock %}

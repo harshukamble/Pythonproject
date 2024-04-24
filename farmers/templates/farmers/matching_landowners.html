@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Terrain View with Markers</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?nature,landscape');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .map-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Matching Landowners</h1>
+        <p>Showing landowners in {{ farmer.city }} with land quantity {{ farmer.land_quantity_sq_ft }} sq ft:</p>
+        <ul>
+            {% for landowner in matching_landowners %}
+            <li>{{ landowner.mobile_number }}</li>
+            <li>{{ landowner.Name }}</li>
+            <!-- Display other landowner details as needed -->
+            {% empty %}
+            <li>No matching landowners found.</li>
+            {% endfor %}    
+        </ul>
+
+        <h2>Nearby Cities</h2>
+        {% if nearby_cities %}
+        <ul>
+            {% for city_info in nearby_cities %}
+            <li>
+                <strong>{{ city_info.name }}</strong><br>
+                <ul>
+                    {% for owner_info in city_info.land_owners %}
+                    <li>
+                        Mobile Number: {{ owner_info.mobile_number }}<br>
+                        Quantity of Land: {{ owner_info.quantity_of_land }} sq ft
+                        Name: {{ owner_info.Name }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No nearby cities with land owners found.</p>
+        {% endif %}
+        
+        <h2>Potential Nearby Cities</h2>
+        <ul>
+            {% for city_info in approx_nearby_cities %}
+            <li>
+                <strong>{{ city_info.name }}</strong><br>
+                <ul>
+                    {% for owner_info in city_info.land_owners %}
+                    <li>
+                        Mobile Number: {{ owner_info.mobile_number }}<br>
+                        Quantity of Land: {{ owner_info.quantity_of_land }} sq ft
+                        Name: {{ owner_info.Name }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h1>Google Terrain View with Markers Example</h1>
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Load the Google Maps JavaScript API -->
+    <script>
+        // Define an empty array to hold the locations
+        var locations = [];
+        
+        // Parse the JSON string to populate the locations array
+        var coordinates = JSON.parse('{{ coordinates|escapejs }}');
+        coordinates.forEach(function(coordinates) {
+            var lat = parseFloat(coordinates.lat);
+            var lng = parseFloat(coordinates.lng);
+            locations.push({ lat: lat, lng: lng });
+        });
+
+        // Initialize the map
+        function initMap() {
+            console.log("Initializing map...");
+            
+            // Specify the coordinates for the center of the map
+            var centerCoordinates = locations.length > 0 ? locations[0] : { lat: 17.6806, lng: 75.3155 };
+
+            // Create a new map object with terrain view
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: centerCoordinates,
+                mapTypeId: 'terrain'
+            });
+
+            // Loop through each location and add a marker
+            locations.forEach(function(location) {
+                console.log("Adding marker at:", location);
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            });
+
+            console.log("Map initialized.");
+            console.log(locations);
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz4VcJ2pQspcRmjb4BpRcayJPinwyGsr8&callback=initMap"></script>
+</body>
+
+</html>

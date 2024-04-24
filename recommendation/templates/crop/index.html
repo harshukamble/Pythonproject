@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Additional custom styles */
+        .form-container {
+            margin-top: 50px;
+        }
+        .recommendation-section {
+            margin-top: 20px;
+        }
+        body {
+            background-image: url('accounts/static/accounts/img/as3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Crop Recommendation</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container bg-light p-4 mt-4">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_location" class="form-label">Enter your location:</label>
+                            {{ form.location }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_nitrogen" class="form-label">Nitrogen:</label>
+                            {{ form.nitrogen }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_phosphorus" class="form-label">Phosphorus:</label>
+                            {{ form.phosphorus }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_potassium" class="form-label">Potassium:</label>
+                            {{ form.potassium }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_ph_level" class="form-label">pH Level:</label>
+                            {{ form.ph_level }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Get Recommendations</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if recommended_crop %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="recommendation-section bg-light p-4">
+                    <h2 class="recommendation-heading">Recommended Crop: {{ recommended_crop }}</h2>
+                    {% if weather_data %}
+                    <div class="weather-data">
+                        <p>Temperature: {{ weather_data.main.temp }}°C</p>
+                        <p>Humidity: {{ weather_data.main.humidity }}%</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

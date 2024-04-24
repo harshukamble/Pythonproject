@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Converted Images</title>
+</head>
+<body>
+    <h1>Converted Images</h1>
+    {% for image_path in image_paths %}
+        <img src="{{ image_path }}" alt="Converted Image">
+    {% endfor %}
+</body>
+</html>

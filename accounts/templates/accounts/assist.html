@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Agropro</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static  'accounts/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      
+      <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'accounts/css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'accounts/img/fevicon.png' %}" type="image/gif" />
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="{% static 'accounts/css/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href='accounts/https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
+      <link rel="stylesheet" href="{% static 'accounts/css/bootstrap-datepicker.min.css' %}">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js %}"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js %}"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'accounts/img/loading.gif' %}" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      <div class="full_bg">
+         <!-- header -->
+         <header class="header-area">
+            <div class="container-fluid">
+               <div class="row d_flex">
+                  <div class=" col-md-2 col-sm-3">
+                     <div class="logo">
+                        <a href="index.html">Agro<span>Pro</span></a>
+                     </div>
+                  </div>
+                  <div class="col-md-8 col-sm-9">
+                     <div class="navbar-area">
+                        <nav class="site-navbar">
+                           <ul>
+                              <li><a class="active" href="index.html">Home</a></li>
+                              <a href="/accounts/login" class="nav-item nav-link">Logout</a>
+                              
+                           </ul>
+                           <button class="nav-toggler">
+                           <span></span>
+                           </button>
+                        </nav>
+                     </div>
+                  </div>
+                  <div class="col-md-2 padd_0 d_none">
+                     <ul class="email text_align_right">
+                        <!-- <li><a href="Javascript:void(0)">Login</a> -->
+                        </li>
+                        <li><a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <!-- end header inner -->
+         <!-- top -->
+         <div class="slider_main">
+            <!-- carousel code -->
+             
+      <!-- end banner -->
+
+      <!-- services -->
+      <div class="services">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_left">
+                     
+                         <h2>Assistence</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="services_box_main">  
+                     <div  class="services_box text_align_left">
+                          <figure><img src="{% static 'accounts/img/service1.jpg' %}" style="height: 350px; width: 500px;" alt="#"/></figure>
+                        <div class="veget">
+                           <h3>Crop<br>Prediction</h3>
+                           <p>Predict Wich crop is better for Your Land</p>
+                        </div>
+                     </div>
+                     <a class="read_more" href="/skn/crop-predict/">predict</a>
+                  </div>
+               </div>
+               <div class="col-md-4">
+               <div class="services_box_main">
+                     <div  class="services_box text_align_left">
+                          <figure><img src="{% static 'accounts/img/pro.png' %}"style="height: 350px; width: 500px;" alt="#"/></figure>
+                        <div class="veget">
+                           <h3>Fertilizer<br>Prediction</h3>
+                           <p>Predict which fertilizer is better for You farm soil</p>
+                        </div>
+                     </div>
+                     <a class="read_more" href="/skn/fertilizer_predict/">Predict</a>
+                  </div>
+               </div>
+               <div class="col-md-4">
+               <div class="services_box_main">
+                     <div  class="services_box text_align_left">
+                          <figure><img src="{% static 'accounts/img/service3.jpg' %}"style="height: 350px; width: 500px;" alt="#"/></figure>
+                        <div class="veget">
+                           <h3>Yeild<br>Probablity</h3>
+                           <p>Predict How Much Yeild you get based on parameters</p>
+                        </div>
+                     </div>
+                     <a class="read_more" href="http://192.168.43.162:777">Predict</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end services -->
+      <!-- end contact -->
+
+      <!-- Javascript files-->
+      <script src="{% static 'accounts/js/jquery.min.js' %}"></script>
+      <script src="{% static 'accounts/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'accounts/js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'accounts/js/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'accounts/js/bootstrap-datepicker.min.js' %}"></script>
+      <script src="{% static 'accounts/js/custom.js' %}"></script>
+   </body>
+</html>
